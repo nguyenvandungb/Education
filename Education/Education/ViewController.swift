@@ -17,7 +17,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         print(Realm.Configuration.defaultConfiguration.description)
-        testRealm()
+        importKanjiDatToDatabase()
     }
 
     func testRealm() {
@@ -38,6 +38,12 @@ class ViewController: UIViewController {
             categories = RealmManager.shareInstance.realm.objects(Category) // 5
         }
         print("====> \(categories.count)")
+    }
+
+    func importKanjiDatToDatabase() {
+        if let path = NSBundle.mainBundle().pathForResource("kanjivg", ofType: "xml") {
+            ImportDataManager.instance.importKanjiXMLFile(path)
+        }
     }
 
     override func didReceiveMemoryWarning() {
