@@ -8,6 +8,35 @@
 
 import Foundation
 
+//Kanji data supporter
+extension XMLElement {
+    func isGroup() -> Bool {
+        if self.name == "g" {
+            return true
+        }
+        return false
+    }
+
+    func isText() -> Bool {
+        if self.name == "text" {
+            return true
+        }
+        for xml in self.children {
+            if xml.name == "text" {
+                return true
+            }
+        }
+        return false
+    }
+
+    func isPath() -> Bool {
+        if self.name == "path" {
+            return true
+        }
+        return false
+    }
+}
+
 class ImportDataManager: NSObject {
     static let instance = ImportDataManager()
 
@@ -26,32 +55,9 @@ class ImportDataManager: NSObject {
                     if root.name != XMLDocument.errorElementName {
                         var listKanjis = [KanjiModel]()
                         for kanjiXML in root.children {
-                            let kInfo = KanjiModel()
-                            if let kId =  kanjiXML.attributes["id"] {
-                                kInfo.kId = kId
+                            if let kInfo = KanjiModel.parseKanjiModel(kanjiXML) {
+                                listKanjis.append(kInfo)
                             }
-
-                            for graph in kanjiXML.children {
-                                let gObj = KanjiGraphModel()
-                                if let gId = graph.attributes["id"] {
-                                    gObj.gId = gId
-                                }
-
-                                for path in graph.children {
-                                    let pInfo = KanjiPathModel()
-                                    if let pId = path.attributes["id"] {
-                                        pInfo.pathId = pId
-                                    }
-                                    if let drawPath = path.attributes["d"] {
-                                        pInfo.drawPath = drawPath
-                                    }
-                                    //add to graph model
-                                    gObj.paths.append(pInfo)
-                                }
-                                //add graph model
-                                kInfo.graphs.append(gObj)
-                            }
-                            listKanjis.append(kInfo)
                         }
                         //realm add kanji model
                         if listKanjis.count > 0 {

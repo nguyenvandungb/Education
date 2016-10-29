@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5D42768E1DC2727800EC9D2F /* TestReaml.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D42768D1DC2727800EC9D2F /* TestReaml.swift */; };
-		5D4276901DC2732F00EC9D2F /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D42768F1DC2732F00EC9D2F /* Category.swift */; };
+		5D2DF3B21DC28873006640D9 /* DrawPathHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5D2DF3B11DC28873006640D9 /* DrawPathHelper.mm */; };
 		5D4276931DC2753E00EC9D2F /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4276921DC2753E00EC9D2F /* RealmManager.swift */; };
 		5D4276971DC27D7C00EC9D2F /* kanjivg.xml in Resources */ = {isa = PBXBuildFile; fileRef = 5D4276961DC27D7C00EC9D2F /* kanjivg.xml */; };
 		5D42769C1DC27DB400EC9D2F /* XMLDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4276991DC27DB400EC9D2F /* XMLDocument.swift */; };
@@ -17,7 +16,24 @@
 		5D4276A11DC27E0500EC9D2F /* ImportDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4276A01DC27E0500EC9D2F /* ImportDataManager.swift */; };
 		5D4276A31DC27F1A00EC9D2F /* KanjiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4276A21DC27F1A00EC9D2F /* KanjiModel.swift */; };
 		5D4276A51DC27F9300EC9D2F /* KanjiPathModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4276A41DC27F9300EC9D2F /* KanjiPathModel.swift */; };
-		5D4276A71DC281FF00EC9D2F /* KanjiGraphModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4276A61DC281FF00EC9D2F /* KanjiGraphModel.swift */; };
+		5D4276A71DC281FF00EC9D2F /* KanjiGroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4276A61DC281FF00EC9D2F /* KanjiGroupModel.swift */; };
+		5D87F8D71DC3F19100E416D0 /* 0f9a8.svg in Resources */ = {isa = PBXBuildFile; fileRef = 5D87F8D41DC3F19100E416D0 /* 0f9a8.svg */; };
+		5D87F8D81DC3F19100E416D0 /* 0f9ab.svg in Resources */ = {isa = PBXBuildFile; fileRef = 5D87F8D51DC3F19100E416D0 /* 0f9ab.svg */; };
+		5D87F8D91DC3F19100E416D0 /* 0f9ad.svg in Resources */ = {isa = PBXBuildFile; fileRef = 5D87F8D61DC3F19100E416D0 /* 0f9ad.svg */; };
+		5DC34A5D1DC3132400BDA3D4 /* BackgroundLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC34A5B1DC3132400BDA3D4 /* BackgroundLayer.swift */; };
+		5DC34A5E1DC3132400BDA3D4 /* StrokeDrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC34A5C1DC3132400BDA3D4 /* StrokeDrawingView.swift */; };
+		5DC34A661DC321FF00BDA3D4 /* FetchResultDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC34A651DC321FF00BDA3D4 /* FetchResultDataSource.swift */; };
+		5DC34A6D1DC3354900BDA3D4 /* WordsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC34A6C1DC3354900BDA3D4 /* WordsListViewController.swift */; };
+		5DC34A6F1DC3355400BDA3D4 /* WordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC34A6E1DC3355400BDA3D4 /* WordCell.swift */; };
+		5DC34A711DC33A8600BDA3D4 /* KanjiStrokeOrders_v4.001.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5DC34A701DC33A8600BDA3D4 /* KanjiStrokeOrders_v4.001.ttf */; };
+		5DC34A761DC33B5C00BDA3D4 /* Utils.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5DC34A751DC33B5C00BDA3D4 /* Utils.mm */; };
+		5DC34A791DC33DC300BDA3D4 /* DrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC34A781DC33DC300BDA3D4 /* DrawViewController.swift */; };
+		5DC34A7D1DC39ECD00BDA3D4 /* CAShapeLayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC34A7C1DC39ECD00BDA3D4 /* CAShapeLayer+Extension.swift */; };
+		5DC34A8D1DC3B8B100BDA3D4 /* SVGParser.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5DC34A8C1DC3B8B100BDA3D4 /* SVGParser.mm */; };
+		5DC34A931DC3CAEE00BDA3D4 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC34A911DC3CABF00BDA3D4 /* libxml2.tbd */; };
+		5DC34A951DC3CAEE00BDA3D4 /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC34A941DC3CAEE00BDA3D4 /* libxml2.2.tbd */; };
+		5DC34A981DC3D09900BDA3D4 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC34A971DC3D09900BDA3D4 /* String+Extension.swift */; };
+		5DC34A9C1DC3E32C00BDA3D4 /* TextModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC34A9B1DC3E32C00BDA3D4 /* TextModel.swift */; };
 		5DF77F3D1DC264E80040030D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF77F3C1DC264E80040030D /* AppDelegate.swift */; };
 		5DF77F3F1DC264E80040030D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF77F3E1DC264E80040030D /* ViewController.swift */; };
 		5DF77F421DC264E80040030D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DF77F401DC264E80040030D /* Main.storyboard */; };
@@ -55,8 +71,9 @@
 /* Begin PBXFileReference section */
 		039E390F7B576E8AB14C1C40 /* Pods_EducationTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EducationTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D07D556204C97BE9A8A4CFB /* Pods-EducationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EducationTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EducationTests/Pods-EducationTests.debug.xcconfig"; sourceTree = "<group>"; };
-		5D42768D1DC2727800EC9D2F /* TestReaml.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestReaml.swift; sourceTree = "<group>"; };
-		5D42768F1DC2732F00EC9D2F /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		5D2DF3AF1DC28873006640D9 /* Education-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Education-Bridging-Header.h"; sourceTree = "<group>"; };
+		5D2DF3B01DC28873006640D9 /* DrawPathHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawPathHelper.h; sourceTree = "<group>"; };
+		5D2DF3B11DC28873006640D9 /* DrawPathHelper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DrawPathHelper.mm; sourceTree = "<group>"; };
 		5D4276921DC2753E00EC9D2F /* RealmManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		5D4276961DC27D7C00EC9D2F /* kanjivg.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = kanjivg.xml; sourceTree = "<group>"; };
 		5D4276991DC27DB400EC9D2F /* XMLDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLDocument.swift; sourceTree = "<group>"; };
@@ -65,7 +82,26 @@
 		5D4276A01DC27E0500EC9D2F /* ImportDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImportDataManager.swift; sourceTree = "<group>"; };
 		5D4276A21DC27F1A00EC9D2F /* KanjiModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KanjiModel.swift; sourceTree = "<group>"; };
 		5D4276A41DC27F9300EC9D2F /* KanjiPathModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KanjiPathModel.swift; sourceTree = "<group>"; };
-		5D4276A61DC281FF00EC9D2F /* KanjiGraphModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KanjiGraphModel.swift; sourceTree = "<group>"; };
+		5D4276A61DC281FF00EC9D2F /* KanjiGroupModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KanjiGroupModel.swift; sourceTree = "<group>"; };
+		5D87F8D41DC3F19100E416D0 /* 0f9a8.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = 0f9a8.svg; sourceTree = "<group>"; };
+		5D87F8D51DC3F19100E416D0 /* 0f9ab.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = 0f9ab.svg; sourceTree = "<group>"; };
+		5D87F8D61DC3F19100E416D0 /* 0f9ad.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = 0f9ad.svg; sourceTree = "<group>"; };
+		5DC34A5B1DC3132400BDA3D4 /* BackgroundLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundLayer.swift; sourceTree = "<group>"; };
+		5DC34A5C1DC3132400BDA3D4 /* StrokeDrawingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrokeDrawingView.swift; sourceTree = "<group>"; };
+		5DC34A651DC321FF00BDA3D4 /* FetchResultDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchResultDataSource.swift; sourceTree = "<group>"; };
+		5DC34A6C1DC3354900BDA3D4 /* WordsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordsListViewController.swift; sourceTree = "<group>"; };
+		5DC34A6E1DC3355400BDA3D4 /* WordCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordCell.swift; sourceTree = "<group>"; };
+		5DC34A701DC33A8600BDA3D4 /* KanjiStrokeOrders_v4.001.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KanjiStrokeOrders_v4.001.ttf; sourceTree = "<group>"; };
+		5DC34A741DC33B5C00BDA3D4 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		5DC34A751DC33B5C00BDA3D4 /* Utils.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Utils.mm; sourceTree = "<group>"; };
+		5DC34A781DC33DC300BDA3D4 /* DrawViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawViewController.swift; sourceTree = "<group>"; };
+		5DC34A7C1DC39ECD00BDA3D4 /* CAShapeLayer+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CAShapeLayer+Extension.swift"; sourceTree = "<group>"; };
+		5DC34A8B1DC3B8B100BDA3D4 /* SVGParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVGParser.h; sourceTree = "<group>"; };
+		5DC34A8C1DC3B8B100BDA3D4 /* SVGParser.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SVGParser.mm; sourceTree = "<group>"; };
+		5DC34A911DC3CABF00BDA3D4 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		5DC34A941DC3CAEE00BDA3D4 /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
+		5DC34A971DC3D09900BDA3D4 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		5DC34A9B1DC3E32C00BDA3D4 /* TextModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextModel.swift; sourceTree = "<group>"; };
 		5DF77F391DC264E80040030D /* Education.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Education.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DF77F3C1DC264E80040030D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5DF77F3E1DC264E80040030D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +126,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DC34A951DC3CAEE00BDA3D4 /* libxml2.2.tbd in Frameworks */,
+				5DC34A931DC3CAEE00BDA3D4 /* libxml2.tbd in Frameworks */,
 				E1197BC07EAE8AE03881234F /* Pods_Education.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -105,14 +143,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5D2DF3AE1DC2885E006640D9 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				5DC34A971DC3D09900BDA3D4 /* String+Extension.swift */,
+				5D2DF3B01DC28873006640D9 /* DrawPathHelper.h */,
+				5D2DF3B11DC28873006640D9 /* DrawPathHelper.mm */,
+				5D2DF3AF1DC28873006640D9 /* Education-Bridging-Header.h */,
+				5DC34A7C1DC39ECD00BDA3D4 /* CAShapeLayer+Extension.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		5D42768C1DC2726000EC9D2F /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				5D42768D1DC2727800EC9D2F /* TestReaml.swift */,
-				5D42768F1DC2732F00EC9D2F /* Category.swift */,
 				5D4276A21DC27F1A00EC9D2F /* KanjiModel.swift */,
 				5D4276A41DC27F9300EC9D2F /* KanjiPathModel.swift */,
-				5D4276A61DC281FF00EC9D2F /* KanjiGraphModel.swift */,
+				5D4276A61DC281FF00EC9D2F /* KanjiGroupModel.swift */,
+				5DC34A9B1DC3E32C00BDA3D4 /* TextModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -129,6 +178,8 @@
 		5D4276951DC27D7C00EC9D2F /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				5D87F8D31DC3F19100E416D0 /* kanji */,
+				5DC34A701DC33A8600BDA3D4 /* KanjiStrokeOrders_v4.001.ttf */,
 				5D4276961DC27D7C00EC9D2F /* kanjivg.xml */,
 			);
 			path = Resource;
@@ -142,6 +193,78 @@
 				5D42769B1DC27DB400EC9D2F /* XMLParser.swift */,
 			);
 			path = XML;
+			sourceTree = "<group>";
+		};
+		5D87F8D31DC3F19100E416D0 /* kanji */ = {
+			isa = PBXGroup;
+			children = (
+				5D87F8D41DC3F19100E416D0 /* 0f9a8.svg */,
+				5D87F8D51DC3F19100E416D0 /* 0f9ab.svg */,
+				5D87F8D61DC3F19100E416D0 /* 0f9ad.svg */,
+			);
+			path = kanji;
+			sourceTree = "<group>";
+		};
+		5DC34A5A1DC3132400BDA3D4 /* Draw */ = {
+			isa = PBXGroup;
+			children = (
+				5DC34A5B1DC3132400BDA3D4 /* BackgroundLayer.swift */,
+				5DC34A5C1DC3132400BDA3D4 /* StrokeDrawingView.swift */,
+				5DC34A8B1DC3B8B100BDA3D4 /* SVGParser.h */,
+				5DC34A8C1DC3B8B100BDA3D4 /* SVGParser.mm */,
+			);
+			path = Draw;
+			sourceTree = "<group>";
+		};
+		5DC34A641DC321FF00BDA3D4 /* FetchResult */ = {
+			isa = PBXGroup;
+			children = (
+				5DC34A651DC321FF00BDA3D4 /* FetchResultDataSource.swift */,
+			);
+			path = FetchResult;
+			sourceTree = "<group>";
+		};
+		5DC34A671DC334FF00BDA3D4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5DC34A771DC33DB800BDA3D4 /* Drawing */,
+				5DC34A6A1DC3354900BDA3D4 /* Words */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		5DC34A6A1DC3354900BDA3D4 /* Words */ = {
+			isa = PBXGroup;
+			children = (
+				5DC34A6B1DC3354900BDA3D4 /* Cells */,
+				5DC34A6C1DC3354900BDA3D4 /* WordsListViewController.swift */,
+			);
+			path = Words;
+			sourceTree = "<group>";
+		};
+		5DC34A6B1DC3354900BDA3D4 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				5DC34A6E1DC3355400BDA3D4 /* WordCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		5DC34A731DC33B5200BDA3D4 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				5DC34A741DC33B5C00BDA3D4 /* Utils.h */,
+				5DC34A751DC33B5C00BDA3D4 /* Utils.mm */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		5DC34A771DC33DB800BDA3D4 /* Drawing */ = {
+			isa = PBXGroup;
+			children = (
+				5DC34A781DC33DC300BDA3D4 /* DrawViewController.swift */,
+			);
+			path = Drawing;
 			sourceTree = "<group>";
 		};
 		5DF77F301DC264E70040030D = {
@@ -167,6 +290,11 @@
 		5DF77F3B1DC264E80040030D /* Education */ = {
 			isa = PBXGroup;
 			children = (
+				5DC34A731DC33B5200BDA3D4 /* Utils */,
+				5DC34A671DC334FF00BDA3D4 /* Controllers */,
+				5DC34A641DC321FF00BDA3D4 /* FetchResult */,
+				5DC34A5A1DC3132400BDA3D4 /* Draw */,
+				5D2DF3AE1DC2885E006640D9 /* Helper */,
 				5D4276981DC27DB400EC9D2F /* XML */,
 				5D4276951DC27D7C00EC9D2F /* Resource */,
 				5D4276911DC2753100EC9D2F /* Managers */,
@@ -194,6 +322,8 @@
 		5DF77F5F1DC266470040030D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5DC34A941DC3CAEE00BDA3D4 /* libxml2.2.tbd */,
+				5DC34A911DC3CABF00BDA3D4 /* libxml2.tbd */,
 				5DF77F601DC266470040030D /* Realm.framework */,
 				5DF77F611DC266470040030D /* RealmSwift.framework */,
 				8FC469CD6B7800D3F5E4747D /* Pods_Education.framework */,
@@ -271,6 +401,7 @@
 					5DF77F381DC264E70040030D = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = HZ65PG3W65;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 					5DF77F4F1DC264E80040030D = {
@@ -305,9 +436,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D4276971DC27D7C00EC9D2F /* kanjivg.xml in Resources */,
+				5D87F8D71DC3F19100E416D0 /* 0f9a8.svg in Resources */,
 				5DF77F4A1DC264E80040030D /* LaunchScreen.storyboard in Resources */,
+				5D87F8D91DC3F19100E416D0 /* 0f9ad.svg in Resources */,
+				5DC34A711DC33A8600BDA3D4 /* KanjiStrokeOrders_v4.001.ttf in Resources */,
 				5DF77F471DC264E80040030D /* Assets.xcassets in Resources */,
 				5DF77F421DC264E80040030D /* Main.storyboard in Resources */,
+				5D87F8D81DC3F19100E416D0 /* 0f9ab.svg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,16 +553,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DC34A9C1DC3E32C00BDA3D4 /* TextModel.swift in Sources */,
 				5D4276A11DC27E0500EC9D2F /* ImportDataManager.swift in Sources */,
+				5DC34A5E1DC3132400BDA3D4 /* StrokeDrawingView.swift in Sources */,
 				5DF77F3F1DC264E80040030D /* ViewController.swift in Sources */,
-				5D4276A71DC281FF00EC9D2F /* KanjiGraphModel.swift in Sources */,
-				5D4276901DC2732F00EC9D2F /* Category.swift in Sources */,
+				5DC34A6F1DC3355400BDA3D4 /* WordCell.swift in Sources */,
+				5DC34A7D1DC39ECD00BDA3D4 /* CAShapeLayer+Extension.swift in Sources */,
+				5D4276A71DC281FF00EC9D2F /* KanjiGroupModel.swift in Sources */,
 				5D42769E1DC27DB400EC9D2F /* XMLParser.swift in Sources */,
 				5DF77F3D1DC264E80040030D /* AppDelegate.swift in Sources */,
 				5DF77F451DC264E80040030D /* Education.xcdatamodeld in Sources */,
-				5D42768E1DC2727800EC9D2F /* TestReaml.swift in Sources */,
+				5DC34A5D1DC3132400BDA3D4 /* BackgroundLayer.swift in Sources */,
+				5D2DF3B21DC28873006640D9 /* DrawPathHelper.mm in Sources */,
+				5DC34A981DC3D09900BDA3D4 /* String+Extension.swift in Sources */,
+				5DC34A761DC33B5C00BDA3D4 /* Utils.mm in Sources */,
+				5DC34A8D1DC3B8B100BDA3D4 /* SVGParser.mm in Sources */,
+				5DC34A791DC33DC300BDA3D4 /* DrawViewController.swift in Sources */,
 				5D4276931DC2753E00EC9D2F /* RealmManager.swift in Sources */,
 				5D4276A31DC27F1A00EC9D2F /* KanjiModel.swift in Sources */,
+				5DC34A661DC321FF00BDA3D4 /* FetchResultDataSource.swift in Sources */,
+				5DC34A6D1DC3354900BDA3D4 /* WordsListViewController.swift in Sources */,
 				5D42769D1DC27DB400EC9D2F /* XMLElement.swift in Sources */,
 				5D4276A51DC27F9300EC9D2F /* KanjiPathModel.swift in Sources */,
 				5D42769C1DC27DB400EC9D2F /* XMLDocument.swift in Sources */,
@@ -569,6 +714,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "${inherited}";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = HZ65PG3W65;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -579,6 +725,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dht.education;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Education/Helper/Education-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
@@ -589,6 +737,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "${inherited}";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = HZ65PG3W65;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -599,6 +748,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dht.education;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Education/Helper/Education-Bridging-Header.h";
 				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
