@@ -21,7 +21,7 @@
 		5D87F8D81DC3F19100E416D0 /* 0f9ab.svg in Resources */ = {isa = PBXBuildFile; fileRef = 5D87F8D51DC3F19100E416D0 /* 0f9ab.svg */; };
 		5D87F8D91DC3F19100E416D0 /* 0f9ad.svg in Resources */ = {isa = PBXBuildFile; fileRef = 5D87F8D61DC3F19100E416D0 /* 0f9ad.svg */; };
 		5DC34A5D1DC3132400BDA3D4 /* BackgroundLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC34A5B1DC3132400BDA3D4 /* BackgroundLayer.swift */; };
-		5DC34A5E1DC3132400BDA3D4 /* StrokeDrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC34A5C1DC3132400BDA3D4 /* StrokeDrawingView.swift */; };
+		5DC34A5E1DC3132400BDA3D4 /* KanjiStrokeDrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC34A5C1DC3132400BDA3D4 /* KanjiStrokeDrawingView.swift */; };
 		5DC34A661DC321FF00BDA3D4 /* FetchResultDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC34A651DC321FF00BDA3D4 /* FetchResultDataSource.swift */; };
 		5DC34A6D1DC3354900BDA3D4 /* WordsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC34A6C1DC3354900BDA3D4 /* WordsListViewController.swift */; };
 		5DC34A6F1DC3355400BDA3D4 /* WordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC34A6E1DC3355400BDA3D4 /* WordCell.swift */; };
@@ -29,11 +29,14 @@
 		5DC34A761DC33B5C00BDA3D4 /* Utils.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5DC34A751DC33B5C00BDA3D4 /* Utils.mm */; };
 		5DC34A791DC33DC300BDA3D4 /* DrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC34A781DC33DC300BDA3D4 /* DrawViewController.swift */; };
 		5DC34A7D1DC39ECD00BDA3D4 /* CAShapeLayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC34A7C1DC39ECD00BDA3D4 /* CAShapeLayer+Extension.swift */; };
-		5DC34A8D1DC3B8B100BDA3D4 /* SVGParser.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5DC34A8C1DC3B8B100BDA3D4 /* SVGParser.mm */; };
 		5DC34A931DC3CAEE00BDA3D4 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC34A911DC3CABF00BDA3D4 /* libxml2.tbd */; };
 		5DC34A951DC3CAEE00BDA3D4 /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC34A941DC3CAEE00BDA3D4 /* libxml2.2.tbd */; };
 		5DC34A981DC3D09900BDA3D4 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC34A971DC3D09900BDA3D4 /* String+Extension.swift */; };
 		5DC34A9C1DC3E32C00BDA3D4 /* TextModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC34A9B1DC3E32C00BDA3D4 /* TextModel.swift */; };
+		5DCB5E0D1DC593BF00387DDC /* SingleStrokeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCB5E0C1DC593BF00387DDC /* SingleStrokeView.swift */; };
+		5DCB5E131DC5B27200387DDC /* UIScrollView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCB5E121DC5B27200387DDC /* UIScrollView+Extension.swift */; };
+		5DCB5E161DC5B4C900387DDC /* PDFImageConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DCB5E151DC5B4C900387DDC /* PDFImageConverter.m */; };
+		5DCB5E191DC5C01000387DDC /* DhtSVGParser.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5DCB5E181DC5C01000387DDC /* DhtSVGParser.mm */; };
 		5DF77F3D1DC264E80040030D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF77F3C1DC264E80040030D /* AppDelegate.swift */; };
 		5DF77F3F1DC264E80040030D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF77F3E1DC264E80040030D /* ViewController.swift */; };
 		5DF77F421DC264E80040030D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DF77F401DC264E80040030D /* Main.storyboard */; };
@@ -87,7 +90,7 @@
 		5D87F8D51DC3F19100E416D0 /* 0f9ab.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = 0f9ab.svg; sourceTree = "<group>"; };
 		5D87F8D61DC3F19100E416D0 /* 0f9ad.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = 0f9ad.svg; sourceTree = "<group>"; };
 		5DC34A5B1DC3132400BDA3D4 /* BackgroundLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundLayer.swift; sourceTree = "<group>"; };
-		5DC34A5C1DC3132400BDA3D4 /* StrokeDrawingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrokeDrawingView.swift; sourceTree = "<group>"; };
+		5DC34A5C1DC3132400BDA3D4 /* KanjiStrokeDrawingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KanjiStrokeDrawingView.swift; sourceTree = "<group>"; };
 		5DC34A651DC321FF00BDA3D4 /* FetchResultDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchResultDataSource.swift; sourceTree = "<group>"; };
 		5DC34A6C1DC3354900BDA3D4 /* WordsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordsListViewController.swift; sourceTree = "<group>"; };
 		5DC34A6E1DC3355400BDA3D4 /* WordCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordCell.swift; sourceTree = "<group>"; };
@@ -96,12 +99,16 @@
 		5DC34A751DC33B5C00BDA3D4 /* Utils.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Utils.mm; sourceTree = "<group>"; };
 		5DC34A781DC33DC300BDA3D4 /* DrawViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawViewController.swift; sourceTree = "<group>"; };
 		5DC34A7C1DC39ECD00BDA3D4 /* CAShapeLayer+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CAShapeLayer+Extension.swift"; sourceTree = "<group>"; };
-		5DC34A8B1DC3B8B100BDA3D4 /* SVGParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVGParser.h; sourceTree = "<group>"; };
-		5DC34A8C1DC3B8B100BDA3D4 /* SVGParser.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SVGParser.mm; sourceTree = "<group>"; };
 		5DC34A911DC3CABF00BDA3D4 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		5DC34A941DC3CAEE00BDA3D4 /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
 		5DC34A971DC3D09900BDA3D4 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		5DC34A9B1DC3E32C00BDA3D4 /* TextModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextModel.swift; sourceTree = "<group>"; };
+		5DCB5E0C1DC593BF00387DDC /* SingleStrokeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleStrokeView.swift; sourceTree = "<group>"; };
+		5DCB5E121DC5B27200387DDC /* UIScrollView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Extension.swift"; sourceTree = "<group>"; };
+		5DCB5E141DC5B4C900387DDC /* PDFImageConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDFImageConverter.h; sourceTree = "<group>"; };
+		5DCB5E151DC5B4C900387DDC /* PDFImageConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDFImageConverter.m; sourceTree = "<group>"; };
+		5DCB5E171DC5C01000387DDC /* DhtSVGParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DhtSVGParser.h; sourceTree = "<group>"; };
+		5DCB5E181DC5C01000387DDC /* DhtSVGParser.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DhtSVGParser.mm; sourceTree = "<group>"; };
 		5DF77F391DC264E80040030D /* Education.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Education.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DF77F3C1DC264E80040030D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5DF77F3E1DC264E80040030D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -151,6 +158,7 @@
 				5D2DF3B11DC28873006640D9 /* DrawPathHelper.mm */,
 				5D2DF3AF1DC28873006640D9 /* Education-Bridging-Header.h */,
 				5DC34A7C1DC39ECD00BDA3D4 /* CAShapeLayer+Extension.swift */,
+				5DCB5E121DC5B27200387DDC /* UIScrollView+Extension.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -209,9 +217,8 @@
 			isa = PBXGroup;
 			children = (
 				5DC34A5B1DC3132400BDA3D4 /* BackgroundLayer.swift */,
-				5DC34A5C1DC3132400BDA3D4 /* StrokeDrawingView.swift */,
-				5DC34A8B1DC3B8B100BDA3D4 /* SVGParser.h */,
-				5DC34A8C1DC3B8B100BDA3D4 /* SVGParser.mm */,
+				5DC34A5C1DC3132400BDA3D4 /* KanjiStrokeDrawingView.swift */,
+				5DCB5E0C1DC593BF00387DDC /* SingleStrokeView.swift */,
 			);
 			path = Draw;
 			sourceTree = "<group>";
@@ -267,6 +274,24 @@
 			path = Drawing;
 			sourceTree = "<group>";
 		};
+		5DCB5E0E1DC5B20C00387DDC /* ScrollViewToPDF */ = {
+			isa = PBXGroup;
+			children = (
+				5DCB5E141DC5B4C900387DDC /* PDFImageConverter.h */,
+				5DCB5E151DC5B4C900387DDC /* PDFImageConverter.m */,
+			);
+			path = ScrollViewToPDF;
+			sourceTree = "<group>";
+		};
+		5DDB07F61DC4A9660004AFA7 /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				5DCB5E171DC5C01000387DDC /* DhtSVGParser.h */,
+				5DCB5E181DC5C01000387DDC /* DhtSVGParser.mm */,
+			);
+			path = Parser;
+			sourceTree = "<group>";
+		};
 		5DF77F301DC264E70040030D = {
 			isa = PBXGroup;
 			children = (
@@ -290,6 +315,8 @@
 		5DF77F3B1DC264E80040030D /* Education */ = {
 			isa = PBXGroup;
 			children = (
+				5DCB5E0E1DC5B20C00387DDC /* ScrollViewToPDF */,
+				5DDB07F61DC4A9660004AFA7 /* Parser */,
 				5DC34A731DC33B5200BDA3D4 /* Utils */,
 				5DC34A671DC334FF00BDA3D4 /* Controllers */,
 				5DC34A641DC321FF00BDA3D4 /* FetchResult */,
@@ -555,7 +582,8 @@
 			files = (
 				5DC34A9C1DC3E32C00BDA3D4 /* TextModel.swift in Sources */,
 				5D4276A11DC27E0500EC9D2F /* ImportDataManager.swift in Sources */,
-				5DC34A5E1DC3132400BDA3D4 /* StrokeDrawingView.swift in Sources */,
+				5DCB5E161DC5B4C900387DDC /* PDFImageConverter.m in Sources */,
+				5DC34A5E1DC3132400BDA3D4 /* KanjiStrokeDrawingView.swift in Sources */,
 				5DF77F3F1DC264E80040030D /* ViewController.swift in Sources */,
 				5DC34A6F1DC3355400BDA3D4 /* WordCell.swift in Sources */,
 				5DC34A7D1DC39ECD00BDA3D4 /* CAShapeLayer+Extension.swift in Sources */,
@@ -564,10 +592,12 @@
 				5DF77F3D1DC264E80040030D /* AppDelegate.swift in Sources */,
 				5DF77F451DC264E80040030D /* Education.xcdatamodeld in Sources */,
 				5DC34A5D1DC3132400BDA3D4 /* BackgroundLayer.swift in Sources */,
+				5DCB5E0D1DC593BF00387DDC /* SingleStrokeView.swift in Sources */,
 				5D2DF3B21DC28873006640D9 /* DrawPathHelper.mm in Sources */,
 				5DC34A981DC3D09900BDA3D4 /* String+Extension.swift in Sources */,
 				5DC34A761DC33B5C00BDA3D4 /* Utils.mm in Sources */,
-				5DC34A8D1DC3B8B100BDA3D4 /* SVGParser.mm in Sources */,
+				5DCB5E131DC5B27200387DDC /* UIScrollView+Extension.swift in Sources */,
+				5DCB5E191DC5C01000387DDC /* DhtSVGParser.mm in Sources */,
 				5DC34A791DC33DC300BDA3D4 /* DrawViewController.swift in Sources */,
 				5D4276931DC2753E00EC9D2F /* RealmManager.swift in Sources */,
 				5D4276A31DC27F1A00EC9D2F /* KanjiModel.swift in Sources */,

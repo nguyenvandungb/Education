@@ -4,4 +4,5 @@
 
 #import "DrawPathHelper.h"
 #import "Utils.h"
-#import "SVGParser.h"
+#import "DhtSVGParser.h"
+#import "PDFImageConverter.h"

@@ -43,8 +43,6 @@ public class TextModel: Object {
             point.y = CGFloat(Double(str) ?? 0) ?? 0
             str = arr[arr.count - 2]
             point.x = CGFloat(Double(str) ?? 0) ?? 0
-            point.x *= 1.6
-            point.y *= 1.58
             origin = point
             return point
         }

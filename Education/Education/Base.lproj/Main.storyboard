@@ -34,7 +34,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fZx-wL-D0O" id="L9O-yw-Xht">
-                                    <frame key="frameInset" width="342" height="43"/>
+                                    <frame key="frameInset" width="342" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hd4-Gy-73O">
@@ -78,22 +78,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hd4-2m-bO7" customClass="StrokeDrawingView" customModule="Education" customModuleProvider="target">
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jzj-0L-A4Q">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="249" id="4te-vM-MXN"/>
-                                    <constraint firstAttribute="height" constant="249" id="9P9-1b-05C"/>
+                                    <constraint firstAttribute="height" constant="66" id="DiL-lJ-MHj"/>
+                                    <constraint firstAttribute="width" constant="120" id="sPY-8P-96P"/>
                                 </constraints>
+                                <state key="normal" title="Export PDF"/>
+                                <connections>
+                                    <action selector="exportPdfAction:" destination="oC0-pu-MTI" eventType="touchUpInside" id="1Tr-c6-hdO"/>
+                                </connections>
+                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="APH-h6-fvf">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="109" id="kij-Oo-M13"/>
+                                </constraints>
+                            </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hd4-2m-bO7" customClass="KanjiStrokeDrawingView" customModule="Education" customModuleProvider="target">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="hd4-2m-bO7" firstAttribute="centerX" secondItem="Dd5-Pq-OCw" secondAttribute="centerX" constant="27" id="a0a-57-8I8"/>
-                            <constraint firstItem="hd4-2m-bO7" firstAttribute="centerY" secondItem="Dd5-Pq-OCw" secondAttribute="centerY" id="iAK-bL-bIY"/>
+                            <constraint firstItem="APH-h6-fvf" firstAttribute="top" secondItem="hd4-2m-bO7" secondAttribute="bottom" constant="22" id="0is-O8-OGa"/>
+                            <constraint firstAttribute="trailing" secondItem="hd4-2m-bO7" secondAttribute="trailing" constant="38" id="GVq-1e-DDl"/>
+                            <constraint firstItem="hd4-2m-bO7" firstAttribute="leading" secondItem="Dd5-Pq-OCw" secondAttribute="leading" constant="37" id="IYC-Ql-PTo"/>
+                            <constraint firstItem="Jk9-tz-18U" firstAttribute="top" secondItem="jzj-0L-A4Q" secondAttribute="bottom" constant="60" id="K9G-Uc-OFZ"/>
+                            <constraint firstItem="APH-h6-fvf" firstAttribute="leading" secondItem="Dd5-Pq-OCw" secondAttribute="leading" id="ROm-HF-8d3"/>
+                            <constraint firstAttribute="trailing" secondItem="APH-h6-fvf" secondAttribute="trailing" id="Rdf-jh-ePS"/>
+                            <constraint firstItem="jzj-0L-A4Q" firstAttribute="centerX" secondItem="Dd5-Pq-OCw" secondAttribute="centerX" id="Vrq-OB-I8D"/>
+                            <constraint firstItem="jzj-0L-A4Q" firstAttribute="top" secondItem="APH-h6-fvf" secondAttribute="bottom" constant="38" id="kIN-f5-oiQ"/>
+                            <constraint firstItem="hd4-2m-bO7" firstAttribute="top" secondItem="0Av-1a-1Qc" secondAttribute="bottom" constant="52" id="tnE-zg-ZAv"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="drawView" destination="hd4-2m-bO7" id="jII-UC-QHU"/>
+                        <outlet property="exportBtn" destination="jzj-0L-A4Q" id="n23-8W-QRI"/>
+                        <outlet property="scrollView" destination="APH-h6-fvf" id="fZc-Zq-Msv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qzj-Ey-Y1W" userLabel="First Responder" sceneMemberID="firstResponder"/>

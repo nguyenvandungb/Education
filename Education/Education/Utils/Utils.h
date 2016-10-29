@@ -17,4 +17,7 @@
                 option:(NSStringDrawingOptions)option
          lineBreakMode:(NSLineBreakMode)lineBreakMode
                   font:(UIFont *)font;
++ (CGRect)SVGStringToRect:(NSString*)serializedRect;
++ (CGRect)makeDrawingRect:(CGRect)boxRect bound:(CGRect)bound;
++ (NSString *)documentPath;
 @end

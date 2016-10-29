@@ -14,14 +14,41 @@ class KanjiModel: Object {
     dynamic var kId = ""
     dynamic var gId = ""
     dynamic var word = ""
+    dynamic var viewBox = ""
+    dynamic var withString = ""
+    dynamic var heightString = ""
     dynamic var time: Double = 0
     var paths = List<KanjiPathModel>()
     var texts = List<TextModel>()
+    var viewBoxRect: CGRect {
+        get {
+            var rect = Utils.SVGStringToRect(viewBox)
+            if rect.isEmpty {
+                rect = CGRect(x: 0, y: 0, width: self.width, height: self.height)
+            }
+            return rect
+        }
+    }
+    var width: CGFloat {
+        get {
+            return CGFloat(Double(withString) ?? 0)
+        }
+    }
+    var height: CGFloat {
+        get {
+            return CGFloat(Double(heightString) ?? 0)
+        }
+    }
+
+    func makeDrawingRect() -> CGRect {
+        return CGRect.zero
+    }
 
     class func parseKanjiModel(xml: XMLElement, rootKey: String = "svg" ) -> KanjiModel? {
         if xml.name == rootKey {
             let kInfo = KanjiModel()
             kInfo.kId = xml.attributes["id"] ?? ""
+            kInfo.viewBox = xml.attributes["viewBox"] ?? ""
             kInfo.time = NSDate().timeIntervalSince1970
             for gXML in xml.children {
                 if gXML.isGroup() {
@@ -72,4 +99,8 @@ class KanjiModel: Object {
         }
         return paths
     }
+
+    override static func ignoredProperties() -> [String] {
+    return ["viewBoxRect"]
+  }
 }

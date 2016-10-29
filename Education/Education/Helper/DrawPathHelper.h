@@ -14,6 +14,7 @@ extern "C" {
 #endif
     UIImage *imageFromPath(NSString* path, UIColor *color);
     UIBezierPath *uibezierPathFromSVGString(NSString *svgPath);
+    UIImage *asImageWithSize(NSString* svgPath, CGSize maximumSize, CGFloat scale, CGRect viewBox);
 #ifdef __cplusplus
 }
 #endif
