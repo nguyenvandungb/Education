@@ -9,6 +9,7 @@
 
 import Foundation
 import RealmSwift
+import SVGgh
 
 class KanjiPathModel: Object {
     dynamic var pathId = ""
@@ -29,7 +30,7 @@ class KanjiPathModel: Object {
 
     func bezierPath() -> UIBezierPath? {
         if drawPath.characters.count > 0 {
-            let bezierPath =  SVGParser(SVGPathStr: self.drawPath).parse()
+            let bezierPath =  DhtSVGParser(SVGPathStr: self.drawPath).parse()
             bezierPath.miterLimit = 4;
             bezierPath.lineCapStyle = .Round;
             bezierPath.lineJoinStyle = .Round;

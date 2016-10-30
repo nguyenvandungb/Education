@@ -6,12 +6,12 @@
 //  Copyright © 2016 Dht. All rights reserved.
 //
 
-#import "SVGParser.h"
+#import "DhtSVGParser.h"
 #import <vector>
 #import <CoreGraphics/CoreGraphics.h>
 NSString * const kValidSVGCommands = @"CcMmLlHhVvZzqQaAsS";
 
-@interface SVGParser()
+@interface DhtSVGParser()
 {
     CGMutablePathRef _path;
     CGPoint _lastControlPoint;
@@ -22,7 +22,7 @@ NSString * const kValidSVGCommands = @"CcMmLlHhVvZzqQaAsS";
 @property (nonatomic, copy) NSString *svgPath;
 @end
 
-@implementation SVGParser
+@implementation DhtSVGParser
 - (instancetype)initWithSVGPathStr:(NSString *)svg {
     self = [super init];
     if (self) {

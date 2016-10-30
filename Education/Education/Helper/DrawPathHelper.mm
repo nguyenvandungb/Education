@@ -108,19 +108,19 @@ void DrawSvgPath(CGContextRef context, NSString *path) {
             continue;
         }
 
-        if (c == 'M') { // M
+        if (c == 'M' | c == 'm') { // M
             CGFloat x = 0.0f;
             CGFloat y = 0.0f;
             readCGFloat(path, position, x);
             readCGFloat(path, position, y);
             CGContextMoveToPoint(context, x, y);
-        } else if (c == 'L') { // L
+        } else if (c == 'L' || c == 'l') { // L
             CGFloat x = 0.0f;
             CGFloat y = 0.0f;
             readCGFloat(path, position, x);
             readCGFloat(path, position, y);
             CGContextAddLineToPoint(context, x, y);
-        } else if (c == 'C') { // C
+        } else if (c == 'C' || c == 'c') { // C
             CGFloat x1 = 0.0f;
             CGFloat y1 = 0.0f;
             CGFloat x2 = 0.0f;
@@ -135,7 +135,7 @@ void DrawSvgPath(CGContextRef context, NSString *path) {
             readCGFloat(path, position, y);
 
             CGContextAddCurveToPoint(context, x1, y1, x2, y2, x, y);
-        } else if (c == 'Z') { // Z
+        } else if (c == 'Z' || c == 'z') { // Z
             CGContextClosePath(context);
             CGContextFillPath(context);
             CGContextBeginPath(context);
@@ -144,13 +144,67 @@ void DrawSvgPath(CGContextRef context, NSString *path) {
 }
 
 
+UIImage *asImageWithSize(NSString* svgPath, CGSize maximumSize, CGFloat scale, CGRect viewBox)
+{
+    CGRect documentRect = viewBox;
+    CGSize documentSize = documentRect.size;
+
+    CGFloat interiorAspectRatio = maximumSize.width/maximumSize.height;
+    CGFloat rendererAspectRatio = documentSize.width/documentSize.height;
+    CGFloat fittedScaling;
+    if(interiorAspectRatio >= rendererAspectRatio)
+    {
+        fittedScaling = maximumSize.height/documentSize.height;
+    }
+    else
+    {
+        fittedScaling = maximumSize.width/documentSize.width;
+    }
+
+    CGFloat scaledWidth = floor(documentSize.width*fittedScaling);
+    CGFloat scaleHeight = floor(documentSize.height*fittedScaling);
+
+    UIGraphicsBeginImageContextWithOptions(CGSizeMake(scaledWidth, scaleHeight), NO, scale);
+    CGContextRef quartzContext = UIGraphicsGetCurrentContext();
+    CGContextClearRect(quartzContext, CGRectMake(0, 0, scaledWidth, scaleHeight));
+
+    CGContextSaveGState(quartzContext);
+    CGContextScaleCTM(quartzContext,fittedScaling,fittedScaling);
+    CGContextTranslateCTM(quartzContext, -documentRect.origin.x*fittedScaling, -documentRect.origin.y*fittedScaling);
+
+    // tell the renderer to draw into my context
+    DrawSvgPath(quartzContext, svgPath);
+    CGContextRestoreGState(quartzContext);
+    UIImage* result = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    NSData *data = UIImageJPEGRepresentation(result, 1);
+    [data writeToFile:@"/Users/dungnv20384/Desktop/export_pdf/image.jpg" atomically:true];
+
+    return result;
+}
+
+
 UIImage *imageFromPath(NSString* path, UIColor *color)
 {
-    CGFloat radius = 200;
+    CGFloat radius = 109;
     UIGraphicsBeginImageContextWithOptions(CGSizeMake(radius, radius), false, 0.0f);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+
+    CGContextSetFillColorWithColor(context, color.CGColor);
+
+    CGContextSetBlendMode(context, kCGBlendModeCopy);
+   // CGContextSetFillColorWithColor(context, [UIColor clearColor].CGColor);
+
+//    CGContextTranslateCTM(context, -0.5, 0.5);
+//    CGFloat factor = 28.0f / 34.0f;
+//    CGContextScaleCTM(context, 0.5f * factor, 0.5f * factor);
+
+    DrawSvgPath(context, path);
+
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
-    
+    NSData *data = UIImageJPEGRepresentation(image, 1);
+    [data writeToFile:@"/Users/dungnv20384/Desktop/export_pdf/image.jpg" atomically:true];
     return image;
 }
 

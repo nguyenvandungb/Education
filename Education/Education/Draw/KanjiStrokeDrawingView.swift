@@ -1,5 +1,15 @@
+//
+//  StrokeDrawingView
+//  Education
+//
+//  Created by Nguyen Van Dung on 10/30/16.
+//  Copyright © 2016 Dht. All rights reserved.
+//
+
+
 import UIKit
 import RealmSwift
+import SVGgh
 
 let textForeground = UIColor.whiteColor()
 public protocol StrokeDrawingViewDataSource: class {
@@ -16,27 +26,50 @@ public protocol StrokeDrawingViewDataDelegate: class {
     func layersAreNowReadyForAnimation()
 }
 
-public class StrokeDrawingView: UIView {
+public class KanjiStrokeDrawingView: UIView {
 
     private let defaultMiterLimit: CGFloat = 4
     private var numberOfStrokes: Int { return dataSource?.numberOfStrokes() ?? 0 }
     private var shouldDraw = false
+    private var shouldDrawStrokeText = false
     private var strokeLayers = [CAShapeLayer]()
     private var backgroundLayer = BackgroundLayer()
     private var drawingSize = CGSizeZero
     private var animations = [CABasicAnimation]()
     private var timer: NSTimer?
+    private var widthScalce: CGFloat = 0
+    private var heightScalce: CGFloat = 0
+    private var drawRect = CGRect.zero
+    private var currentIndex = 0
 
+    var kanjiInfo: KanjiModel? {
+        didSet {
+            shouldDrawStrokeText = true
+            let boundSize = dataSource?.sizeOfDrawing() ?? CGSize.zero
+            let boxRect = CGRect(origin: CGPoint.zero, size: boundSize)
+            self.drawRect = Utils.makeDrawingRect(boxRect, bound: self.bounds)
+            var preferredRect = self.kanjiInfo?.viewBoxRect ?? CGRect.zero
+            if preferredRect.isEmpty {
+                preferredRect = drawRect
+            }
+            let nativeWidth = preferredRect.width
+            self.widthScalce = drawRect.width / nativeWidth
+            let nativeHeight = preferredRect.height
+            self.heightScalce = drawRect.height / nativeHeight
+            self.drawingSize = drawRect.size
+            self.layoutSubviews()
+            self.setNeedsDisplay()
+        }
+    }
     deinit {
         timer?.invalidate()
     }
-
+    
     // MARK: - Public API
     /// Custom drawing starts afte this property is set
     public var dataSource: StrokeDrawingViewDataSource? {
         didSet {
-            guard let dataSource = dataSource else {return}
-            drawingSize = dataSource.sizeOfDrawing()
+            guard let _ = dataSource else {return}
             shouldDraw = true
             setNeedsDisplay()
         }
@@ -55,7 +88,11 @@ public class StrokeDrawingView: UIView {
         }
 
         playSingleAnimation()
-        timer = NSTimer.scheduledTimerWithTimeInterval(delayBeforeEach + animationDuration, target: self, selector: "playSingleAnimation", userInfo: nil, repeats: true)
+        timer = NSTimer.scheduledTimerWithTimeInterval(delayBeforeEach + animationDuration,
+                                                       target: self,
+                                                       selector: #selector(self.playSingleAnimation),
+                                                       userInfo: nil,
+                                                       repeats: true)
     }
 
     /// Use this method to stop looped animation
@@ -95,19 +132,17 @@ public class StrokeDrawingView: UIView {
         }
     }
 
-    /// Use this method to reset strokes layers progress to 'progress'
-    /// Can be value from 0 t0 1
+
     public func setStrokesProgress(progress: CGFloat) {
         for strokeLayer in strokeLayers {
             strokeLayer.strokeEnd = progress
         }
     }
-
 }
 
 
 // MARK:
-extension StrokeDrawingView {
+extension KanjiStrokeDrawingView {
 
     private func pauseLayers() {
         for strokeLayer in strokeLayers {
@@ -128,10 +163,9 @@ extension StrokeDrawingView {
     }
 
     private func drawIfNeeded() {
-
+    
         if shouldDraw == true && numberOfStrokes > 0 {
             layer.addSublayer(backgroundLayer)
-            var i = 0
             for strokeIndex in 0..<numberOfStrokes {
                 let color = dataSource?.colorForStrokeAtIndex(strokeIndex) ?? UIColor.blackColor()
                 let shapeLayer = CAShapeLayer()
@@ -144,25 +178,30 @@ extension StrokeDrawingView {
                 shapeLayer.strokeEnd = 0.0
                 layer.addSublayer(shapeLayer)
                 strokeLayers.append(shapeLayer)
-
-                if let textModels = dataSource?.textToDraw() {
-                    for model in textModels {
-                        if i < textModels.count {
-                            let apoint = model.origin
-                            let labelRect = CGRectMake(apoint.x + 5, apoint.y, 9, 11)
-                            let labelStyle = NSParagraphStyle.defaultParagraphStyle().mutableCopy() as! NSMutableParagraphStyle
-                            labelStyle.alignment = .Center
-
-                            let labelFontAttributes = [NSFontAttributeName: UIFont(name: "Helvetica", size: 8)!, NSForegroundColorAttributeName: textForeground, NSParagraphStyleAttributeName: labelStyle]
-
-                            model.value.drawInRect(labelRect, withAttributes: labelFontAttributes)
-                        }
-                    }
-                }
             }
             shouldDraw = false
             delegate?.layersAreNowReadyForAnimation()
-            i += 1
+        }
+        if shouldDrawStrokeText {
+            self.drawStrokeText()
+        }
+    }
+
+    func drawStrokeText() {
+        if let textModels = dataSource?.textToDraw() {
+            for i in 0..<textModels.count {
+                if i <= currentIndex {
+                    let model = textModels[i]
+                    let apoint = model.origin
+                    let labelRect = CGRectMake(apoint.x * self.widthScalce + 5, apoint.y * self.heightScalce - 10, 9, 11)
+                    let labelStyle = NSParagraphStyle.defaultParagraphStyle().mutableCopy() as! NSMutableParagraphStyle
+                    labelStyle.alignment = .Center
+
+                    let labelFontAttributes = [NSFontAttributeName: UIFont(name: "Helvetica", size: 8)!, NSForegroundColorAttributeName: textForeground, NSParagraphStyleAttributeName: labelStyle]
+
+                    model.value.drawInRect(labelRect, withAttributes: labelFontAttributes)
+                }
+            }
         }
     }
 
@@ -174,6 +213,7 @@ extension StrokeDrawingView {
         baseAnim.fillMode = kCAFillModeForwards
         baseAnim.removedOnCompletion = removeOnComletion
         baseAnim.toValue = 1
+        baseAnim.delegate = self
         return baseAnim
     }
 
@@ -183,32 +223,43 @@ extension StrokeDrawingView {
 
     public override func layoutSubviews() {
         super.layoutSubviews()
-
         guard let dataSource = dataSource where strokeLayers.count > 0 else {return}
-
-        let scale: CGFloat = 1.78
-
         var pathes = [UIBezierPath]()
-
         for strokeIndex in 0..<numberOfStrokes {
 
             let strokeLayer = strokeLayers[strokeIndex]
 
             let path = dataSource.pathForIndex(strokeIndex)
             let pathCopy = UIBezierPath(CGPath: path.CGPath)
-            pathCopy.lineWidth = path.lineWidth * 1.81
+            pathCopy.lineWidth = path.lineWidth * self.widthScalce
             pathes.append(pathCopy)
-            pathCopy.applyTransform(CGAffineTransformMakeScale(scale, scale))
+            pathCopy.applyTransform(CGAffineTransformMakeScale(self.widthScalce, self.heightScalce))
 
-            strokeLayer.lineWidth = path.lineWidth * 1.81
+            strokeLayer.lineWidth = path.lineWidth * self.widthScalce
             strokeLayer.path = pathCopy.CGPath
         }
 
         if let underlineColor = dataSource.colorForUnderlineStrokes() {
-            backgroundLayer.frame = bounds
+            backgroundLayer.frame = drawRect
             backgroundLayer.strokeColor = underlineColor
             backgroundLayer.strokes = pathes
             backgroundLayer.setNeedsDisplay()
+        }
+    }
+}
+
+extension KanjiStrokeDrawingView: CAAnimationDelegate {
+    public func animationDidStart(anim: CAAnimation) {
+        var i  = 0
+        for stroke in self.strokeLayers {
+            if let animation = stroke.animationForKey("strokeEndAnimation") {
+                if anim == animation {
+                    currentIndex = i
+                    self.setNeedsDisplay()
+                    break
+                }
+            }
+            i += 1
         }
     }
 }
@@ -235,14 +286,3 @@ extension CALayer {
         beginTime = timeSincePause
     }
 }
-
-
-public func performWithDelay(delay: Double, closure: () -> Void) {
-    dispatch_after(
-        dispatch_time(
-            DISPATCH_TIME_NOW,
-            Int64(delay * Double(NSEC_PER_SEC))
-        ),
-        dispatch_get_main_queue(), closure)
-}
-

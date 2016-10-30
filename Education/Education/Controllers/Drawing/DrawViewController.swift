@@ -9,10 +9,10 @@
 import Foundation
 import RealmSwift
 
-
 class DrawViewController: UIViewController {
-
-    @IBOutlet weak var drawView: StrokeDrawingView!
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var exportBtn: UIButton!
+    @IBOutlet weak var drawView: KanjiStrokeDrawingView!
     @IBOutlet weak var wordLabel: UILabel!
     var word: String = ""
     var info: KanjiModel? {
@@ -35,14 +35,48 @@ class DrawViewController: UIViewController {
 
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        drawView?.kanjiInfo = info
         drawView?.playForever(2)
         wordLabel?.sizeToFit()
+        setupContentForScrollView()
+    }
+
+    func setupContentForScrollView() {
+        let boxRect = info?.viewBoxRect ?? CGRect.zero
+        let contentWith = CGFloat(bezierPaths.count) * boxRect.width
+        let contentSize = CGSize(width: contentWith, height: scrollView.bounds.height)
+        scrollView?.contentSize = contentSize
+        var lineRect = CGRect.zero
+        lineRect.size = boxRect.size
+        for i in 0..<bezierPaths.count {
+            let lineview = SingleStrokeView(frame: lineRect)
+            lineview.backgroundColor = UIColor.whiteColor()
+            lineview.stokePath = bezierPaths
+            lineview.colorPathIndex = i
+            scrollView?.addSubview(lineview)
+            lineRect.origin.x += lineRect.width
+        }
+    }
+
+    @IBAction func exportPdfAction(sender: AnyObject) {
+        if let pdfImage = self.scrollView.screenShot() {
+            let pdfData = PDFImageConverter.convertImageToPDF(pdfImage)
+            let path = Utils.documentPath() + "/" + "kanji.pdf"
+            do {
+                try pdfData.writeToFile(path, options: NSDataWritingOptions.AtomicWrite)
+            } catch {
+                
+            }
+        }
     }
 }
 
 extension DrawViewController: StrokeDrawingViewDataSource {
     func sizeOfDrawing() -> CGSize {
-        return                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              CGSize(width: 1000, height: 1000)
+        if let size = info?.viewBoxRect.size {
+            return size
+        }
+        return CGSize(width: 109, height: 109)
     }
 
     func numberOfStrokes() -> Int {

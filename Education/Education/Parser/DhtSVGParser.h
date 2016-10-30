@@ -10,7 +10,7 @@
 #import <CoreGraphics/CoreGraphics.h>
 #import <UIKit/UIKit.h>
 
-@interface SVGParser : NSObject
+@interface DhtSVGParser : NSObject
 - (instancetype)initWithSVGPathStr:(NSString *)svg;
 - (UIBezierPath *)parse;
 @end
