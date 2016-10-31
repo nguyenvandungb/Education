@@ -9,7 +9,6 @@
 
 import Foundation
 import RealmSwift
-import SVGgh
 
 class KanjiPathModel: Object {
     dynamic var pathId = ""

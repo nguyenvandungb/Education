@@ -9,7 +9,6 @@
 
 import UIKit
 import RealmSwift
-import SVGgh
 
 let textForeground = UIColor.whiteColor()
 public protocol StrokeDrawingViewDataSource: class {
